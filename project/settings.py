@@ -37,7 +37,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Add third party files
+    'rest_framework',
+    'corsheaders',
+    'notes'
 ]
+
+# Allow any client access
+CORS_ORIGIN_ALLOW_ALL = True
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES":
+        ["rest_framework.permissions.AllowAny",],
+    "DEFAULT_PARSER_CLASSES":["rest_framework.parsers.JSONParser",],
+    }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
