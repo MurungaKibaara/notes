@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     # Add third party files
     'rest_framework',
     'corsheaders',
-    'notes'
+    'notes',
+    'jwtauth'
 ]
 
 # Allow any client access
@@ -53,9 +54,9 @@ REST_FRAMEWORK = {
     "DEFAULT_PARSER_CLASSES":[
         "rest_framework.parsers.JSONParser",
     ],
-    "DEFAULT_AUTHENTICATION_CLASSES":                                 # new
-        "rest_framework.authentication.SessionAuthentication",        # new
-        "rest_framework_simplejwt.authentication.JWTAuthentication",  # new
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
 
     }
